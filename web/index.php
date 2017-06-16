@@ -225,19 +225,7 @@ if (isset($_COOKIE['usuario'])) {
         <script type="text/javascript" src="js/app.js"></script>
         <!-- dropzone -->
         <script src="production/js/dropzone/dropzone.js"></script>
-
-
-
         <script type="text/javascript" src="js/<?= $pagina ?>.js"></script> 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $.uploadPreview({
-                    input_field: "#image-upload",
-                    preview_box: "#image-preview",
-                    label_field: "#image-label"
-                });                
-            });
-        </script>
         <!-- input_mask -->
         <script type="text/javascript">
             $(document).ready(function () {
@@ -245,8 +233,6 @@ if (isset($_COOKIE['usuario'])) {
                 $('input[data-mask]').each(function () {
                     $(this).setMask($(this).data('mask'));
                 });
-                $('input[name=placa]').setMask('aaa-9999');
-                $("#placa").setMask('aaa-9999');
             });
         </script>.
         <!-- /input mask -->
