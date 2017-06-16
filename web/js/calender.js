@@ -1,5 +1,5 @@
 $(document).ready(function() {
-//    verifyLogin();
+    verifyLogin();
     loadSala();
 });
 
@@ -111,12 +111,12 @@ $(function(){
     }
     // Handle Click on Add Button
     $('.modal').on('click', '#add-event',  function(e){
-        if(validator(['id_sala','time', 'description'])) {
+        if(validator(['idSala','time', 'description'])) {
             $.post(rootUrl + 'calender/save', {
                 title: $('#title').val(),
                 description: $('#description').val(),
                 color: $('#color').val(),
-                id_sala: $("#id_sala option:selected").val(),
+                id_sala: $("#idSala option:selected").val(),
                 date: currentDate + ' ' + getTime()
             }, function(data){
                 resp = data.result;
@@ -154,7 +154,7 @@ function loadSala(){
         dataType: "json",
         url: rootUrl + "salas/listAll",
         success: function (data) {
-            selectSala = $("#novoModal select[name=id_sala]");
+            selectSala = $("#novoModal select[name=idSala]");
             selectSala.find('option').remove().end();
             data.result.forEach(function (sala) {
                 selectSala.append('<option value="' + sala.id + '">' + sala.nome + '</option>');
