@@ -121,7 +121,7 @@ $(function(){
             }, function(data){
                 resp = data.result;
                 if (resp === "usado") {
-                    ko.notification.info("Horário já está senfo utilizado.");
+                    ko.notification.info("Horário já está sendo utilizado.");
                 }else{
                     $('.modal').modal('hide');
                     $('#calendar').fullCalendar("refetchEvents");

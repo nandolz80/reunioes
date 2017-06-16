@@ -58,9 +58,10 @@ class Calender {
     }
 
     function validaHorario($agenda) {
-        $stmt = DB::prepare("SELECT COUNT(*) FROM agenda WHERE date = :data and id_sala = :id_sala");
+        $usuario = ($_SESSION['login_nome']);
+        $stmt = DB::prepare("SELECT COUNT(*) FROM agenda WHERE date = :data and usuario = :usuario");
         $stmt->bindParam("data", $agenda->date);
-        $stmt->bindParam("id_sala", $agenda->id_sala);
+        $stmt->bindParam("usuario", $usuario);
         $stmt->execute();
         return $stmt->fetchColumn();
     }
