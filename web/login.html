@@ -1,0 +1,99 @@
+<link href="css/calendar/fullcalendar.css" rel="stylesheet">
+<link href="css/calendar/fullcalendar.print.css" rel="stylesheet" media="print">
+<link href="css/bootstrap-colorpicker.min.css" rel="stylesheet" />
+<link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
+<script src='js/calendar/bootstrap-colorpicker.min.js'></script>
+<script src='js/calendar/bootstrap-timepicker.min.js'></script>
+<style>
+    /*Maximum and top of everything*/
+    .ui-autocomplete
+    {
+        z-index: 99999; 
+    }
+    .fc-content{
+        color: black;
+    }
+    .fc th {
+        padding: 10px 0px;
+        vertical-align: middle;
+        background:#F2F2F2;
+    }
+    .fc-day-grid-event>.fc-content {
+        padding: 4px;
+    }
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .error {
+        color: #ac2925;
+        margin-bottom: 15px;
+    }
+    .event-tooltip {
+        width:150px;
+        background: rgba(0, 0, 0, 0.85);
+        color:#FFF;
+        padding:10px;
+        position:absolute;
+        z-index:10001;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 11px;
+    }
+
+    .submit{
+        margin-top: 5px;
+    }
+    body{
+        margin-top: 50px;
+        background-color: black;
+    }
+</style>
+<body >    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" data-bind="submit: entrar">
+                    <div class="form-group">
+                        <input type="text" placeholder="Login" class="form-control" required data-bind="value: login" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Senha" class="form-control" required data-bind="value: senha">
+                    </div>
+                    <button type="submit" class="btn btn-success submit">Entrar</button>
+                </form>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h3 class="text-center">Faça login para efetuar o agendamento</h3>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        <div id='calendar'></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/moment.min.js"></script>
+    <script src="js/calendar/fullcalendar.min.js"></script>
+    <script src="js/calendar/lang-all.js"></script>

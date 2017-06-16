@@ -1,0 +1,127 @@
+
+
+<link href="css/calendar/fullcalendar.css" rel="stylesheet">
+<link href="css/calendar/fullcalendar.print.css" rel="stylesheet" media="print">
+<link href="css/bootstrap-colorpicker.min.css" rel="stylesheet" />
+<link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
+<script src='js/calendar/bootstrap-colorpicker.min.js'></script>
+<script src='js/calendar/bootstrap-timepicker.min.js'></script>
+<style>
+    /*Maximum and top of everything*/
+    .ui-autocomplete
+    {
+        z-index: 99999; 
+    }
+    .fc-content{
+        color: black;
+    }
+    .fc th {
+        padding: 10px 0px;
+        vertical-align: middle;
+        background:#F2F2F2;
+    }
+    .fc-day-grid-event>.fc-content {
+        padding: 4px;
+    }
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .error {
+        color: #ac2925;
+        margin-bottom: 15px;
+    }
+    .event-tooltip {
+        width:150px;
+        background: rgba(0, 0, 0, 0.85);
+        color:#FFF;
+        padding:10px;
+        position:absolute;
+        z-index:10001;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 11px;
+    }
+
+</style>
+<div class="page-title">
+    <div class="title_left">
+        <h3>
+            Agenda
+        </h3>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Calendário</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+                <div id='calendar'></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="novoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="error"></div>
+                <form class="form-horizontal">
+                    <div class="form-group col-md-3 col-sm-3 col-xs-12">
+                        <label for="time">Hora *</label>
+                        <select class="form-control" name="time" id="time">
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </div>   
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <label for="id_sala">Salas</label>
+                        <select class="form-control" name="id_sala" id="id_sala">                                               
+                        </select>
+                    </div>
+                    <div class="form-group col-md-5 col-sm-5 col-xs-12">
+                        <label for="color">Cor</label>
+                        <input id="color" name="color" type="text" class="form-control input-md" readonly="readonly" />
+                        <span class="help-block">Click to pick a color</span>
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12" id="descricaoForm">
+                        <label for="description">Descrição *</label>
+                        <textarea class="form-control" rows="3" name="description" id="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/moment.min.js"></script>
+<script src="js/calendar/fullcalendar.min.js"></script>
+<script src="js/calendar/lang-all.js"></script>
+
+</body>
+</html>
